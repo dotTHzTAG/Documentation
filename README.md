@@ -7,18 +7,18 @@ The CaTSper tool extracts the frequency-dependent optical constants from teraher
 ## Basic Workflow
 The process of extracting the spectra from the raw time-domain data involves two separate steps:
 
-### cambridgeTHzconverter 
-Collating the raw sample and reference waveform(s) into a single standardised .thz file. Additional metadata is captured in this file, including, for example, sample thickness, temperature or other contextual information. 
+### CaTx (CambridgeTHzConverter) 
+Collating the raw sample and reference waveform(s) into a single standardised [.thz file](/thz_file_format.md). Additional metadata is captured in this file, including, for example, sample thickness, temperature or other contextual information. A simple CaTx tutorial can be found [here](/CatsperConverter.md).
 
-![catsperMATconverter main GUI](/images/catsper_converter_main_gui_new.png)
+![catx main GUI](/images/catx_gui.png)
 
-### catsper
-The main CaTSper tool is designed to read the .thz file and carry out all subsequent signal processing steps. The tool can be used to display the time-domain waveform, apply any required truncation to the waveforms, select and apply suitable Fourier transformation parameters and output of the spectra.
+### CaTSper
+The main CaTSper tool is designed to read the .thz file and carry out all subsequent signal processing steps. The tool can be used to display the time-domain waveform, apply any required truncation to the waveforms, select and apply suitable Fourier transformation parameters and output of the spectra. Please find the [CaTSper tutorial](/catsper_tutorial.md) and additional explanation on the [mathematical steps](/catsper_function_ref.md) for data processing using CaTSper.
 
-![catsper main GUI](/images/catsper_main_gui_new.png)
+![catsper main GUI](/images/catsper_gui.png)
 
 ## Detailed Information
-- [CaTSper .thz Converter](/CatsperConverter.md)
+- [CaTx (CambridgeTHzConverter) tutorial](/CatsperConverter.md)
 - [CaTSper step-by-step tutorial](/catsper_tutorial.md)
 - [CaTSper detailed description of processing steps](/catsper_function_ref.md)
 - [The .thz file format](/thz_file_format.md)
