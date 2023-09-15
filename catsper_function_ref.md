@@ -1,6 +1,6 @@
 # CaTSper Processing Steps: A Detailed Description
 
-This document aims to provide a detailed description to the scientific basis of the processing steps involved in [CaTSper](https://github.com/CamTHz/catsper). A step-by-step guide to using CaTSper is available [here](https://github.com/CamTHz/CamTHz.GitHub.io/blob/main/catsper_tutorial.md#catsper-step-by-step-tutorial).
+This document aims to provide a detailed description to the scientific basis of the processing steps involved in [CaTSper](https://github.com/dotTHzTAG/CaTSper). A step-by-step guide to using CaTSper is available [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md).
 <!-- A detailed in-line annotation of CaTSper's code is available here. -->
 
 ## Time Domain Analysis
@@ -15,7 +15,7 @@ The time delay due to one internal reflection occurring $\Delta t_{1etl}$ is als
 
 $$ \Delta t_{1etl} = \Delta t + \frac{2H n_{eff}}{c}$$
 
-A step-by-step guide to CaTSper's time-domain analysis in CaTSper can be found [here](https://github.com/CamTHz/CamTHz.GitHub.io/blob/main/catsper_tutorial.md#time-domain-td-tab).  
+A step-by-step guide to CaTSper's time-domain analysis in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#time-domain-td-tab).  
 
 ## Fourier Transform
 
@@ -58,7 +58,7 @@ Due to the high signal-to-noise ratio at 0.8 THz, it is set as the starting poin
 Frequency domain data, that corresponds to frequencies greater than 0.8 THz, will be unwrapped in increasing values starting at 0.8 THz, and vice versa for data corresponding to frequencies less than 0.8 THz.
 A straight line is then fitted to unwrapped phase against frequency from 0.05 to 0.4 THz. The intercept of the straight line at 0 THz gives the phase offset. The phase offset is then applied to all phase data for correction.
 
-A step-by-step guide to Fourier transform in CaTSper can be found [here](https://github.com/CamTHz/CamTHz.GitHub.io/blob/main/catsper_tutorial.md#fast-fourier-transformation-fft).
+A step-by-step guide to Fourier transform in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
 ## Frequency Domain Analysis
 
@@ -133,7 +133,7 @@ $$ \text{Re}(\kappa(v)) = n_{eff,FD}(v)^2 - k(v)^2 $$
 
 $$ \text{Im}(\kappa(v)) = 2 n_{eff,FD}(v) k(v) $$
 
-A step-by-step guide to CaTSper's frequency domain analysis can be found [here](https://github.com/CamTHz/CamTHz.GitHub.io/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
+A step-by-step guide to CaTSper's frequency domain analysis can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
 ## Data Manipulation
 
@@ -141,7 +141,7 @@ A step-by-step guide to CaTSper's frequency domain analysis can be found [here](
 
 The MATLAB built-in function ['findpeaks'](https://uk.mathworks.com/help/signal/ref/findpeaks.html) is used to identify peaks for a set of selected data (e.g. absorption coefficient $\alpha$) against another (e.g. frequency). A peak is defined such that it has a value greater than its adjacent neighbours or has a value of infinity. A minimum peak [prominence](https://uk.mathworks.com/help/signal/ug/prominence.html) can be specified such that only peaks with prominence greater than that will be recorded.
 
-A step-by-step guide to data manipulation in CaTSper can be found [here](https://github.com/CamTHz/CamTHz.GitHub.io/blob/main/catsper_tutorial.md#data-manipulation-dm-tab).
+A step-by-step guide to data manipulation in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#data-manipulation-dm-tab).
 
 ## Bibliography
 [^Jepsen&Fischer2005]: Jepsen, P.U. and Fischer, B.M., 2005. Dynamic range in terahertz time-domain transmission and reflection spectroscopy. _Optics letters, 30_(1), pp.29-31.
