@@ -7,12 +7,11 @@ The CaTSper tool extracts the frequency-dependent optical constants from teraher
 + CaTSper (Cambridge THz Spectrum Analyser)
 
 >[!NOTE]
-> Please download CaTx and CaTSper packages at the following links.
-> Download packages are named in 'Install_releaseDate.zip' format.
+> Please download CaTx and CaTSper packages at the following links. The packages are named in 'Install_releaseDate.zip' format.
 
-[CaTx Source Code Page](https://github.com/dotTHzTAG/catx)
+**  [CaTx Source Code Page](https://github.com/dotTHzTAG/catx)**
 
-[CaTSper Source Code Page](https://github.com/dotTHzTAG/CaTSper)
+**  [CaTSper Source Code Page](https://github.com/dotTHzTAG/CaTSper)**
 
 ## Basic Workflow
 The process of extracting the spectra from the raw time-domain data involves two separate steps:
