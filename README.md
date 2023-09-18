@@ -1,16 +1,19 @@
 # Documentation
 The CaTSper tool extracts the frequency-dependent optical constants from terahertz time-domain waveforms. It is intended to serve as a simple-to-use but powerful tool for the terahertz time-domain spectroscopy (THz-TDS) community.
 
-Table of Contents
+**Table of Contents**
 - Basic Workflow
 * CaTx (Cambridge THz Converter)
 + CaTSper (Cambridge THz Spectrum Analyser)
 
 >[!NOTE]
-> Please download CaTx and CaTSper packages at the following links. Download packages are named in 'Install_releaseDate.zip' format.
+> Please download CaTx and CaTSper packages at the following links.
 
-1.[CaTx Source Code Page](https://github.com/dotTHzTAG/catx)
-1.[CaTSper Source Code Page](https://github.com/dotTHzTAG/CaTSper)
+> Download packages are named in 'Install_releaseDate.zip' format.
+
+[CaTx Source Code Page](https://github.com/dotTHzTAG/catx)
+
+[CaTSper Source Code Page](https://github.com/dotTHzTAG/CaTSper)
 
 ## Basic Workflow
 The process of extracting the spectra from the raw time-domain data involves two separate steps:
