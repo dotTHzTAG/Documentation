@@ -1,8 +1,7 @@
 # Documentation
 The CaTSper tool extracts the frequency-dependent optical constants from terahertz time-domain waveforms. It is intended to serve as a simple-to-use but powerful tool for the terahertz time-domain spectroscopy (THz-TDS) community.
 
-![dotTHz project logo](/images/dotTHzProject_logo.png)
-<img src="/images/dotTHzProject_logo.png" width="50">
+<img src="/images/dotTHzProject_logo.png" height ="150">
 
 **Table of Contents**
 - Basic Workflow
