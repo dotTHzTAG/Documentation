@@ -8,7 +8,6 @@ The CaTSper tool extracts the frequency-dependent optical constants from teraher
 
 >[!NOTE]
 > Please download CaTx and CaTSper packages at the following links.
-
 > Download packages are named in 'Install_releaseDate.zip' format.
 
 [CaTx Source Code Page](https://github.com/dotTHzTAG/catx)
