@@ -18,6 +18,8 @@ The CaTSper tool extracts the frequency-dependent optical constants from teraher
 ## Basic Workflow
 The process of extracting the spectra from the raw time-domain data involves two separate steps:
 
+![Workflow schematic](/images/workFlow.png)
+
 ### CaTx (Cambridge THz Converter) 
 Collating the raw sample and reference waveform(s) into a single standardised [.thz file](/thz_file_format.md). Additional metadata is captured in this file, including, for example, sample thickness, temperature or other contextual information. A simple CaTx tutorial can be found [here](/CatsperConverter.md).
 
