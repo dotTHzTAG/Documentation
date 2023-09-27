@@ -76,7 +76,7 @@ The upper limit frequency can also be specified in CaTSper's DR Filter app so th
 
 Transmittance measures the fraction of the terahertz wave that is transmitted through the sample to the detector. The transmission amplitude $T$ is defined as
 
-$$ T(\nu) = \frac{|E_{\text{sample}(\nu)}|}{|E_{ref(\nu)}|} $$
+$$ T(\nu) = \frac{|E_{\text{sample}(\nu)}|}{|E_{\text{ref}(\nu)}|} $$
 
 where $E_{\text{sample}}$ is the frequency domain amplitude of the sample measurement and $E_{\text{ref}}$ is the frequency domain amplitude of the reference.
 
@@ -106,15 +106,15 @@ As discussed earlier, both $n_{\text{medium}}$ and $n_{\text{ref}}$ take a value
 
 The sample factor is similarly defined as 
 
-$$ \text{\text{sample} factor}(\nu) = \frac{4 n_{\text{medium}} n_{\text{eff,FD}}(\nu)}{\left( n_{\text{medium}} + n_{\text{eff,FD}}(\nu) \right)^{2}} $$
+$$ \text{Sample factor}(\nu) = \frac{4 n_{\text{medium}} n_{\text{eff,FD}}(\nu)}{\left( n_{\text{medium}} + n_{\text{eff,FD}}(\nu) \right)^{2}} $$
 
 $\alpha$ is then calculated by
 
-$$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}}{\text{\text{sample} factor} (\nu)}  \right) $$
+$$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}}{\text{Sample factor} (\nu)}  \right) $$
 
 In CaTSper's DR Filter app, the dynamic range of $\alpha (\nu)$ can be checked by the maximum absorption coefficient $\alpha_{max} (\nu)$, which can be calculated by
 
-$$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}}{\text{\text{sample} factor}(\nu)}  \right) $$
+$$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}}{\text{Sample factor}(\nu)}  \right) $$
 
 which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
