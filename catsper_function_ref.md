@@ -5,9 +5,9 @@ This document aims to provide a detailed description to the scientific basis of 
 
 ## Time Domain Analysis
 
-The time delay $\Delta t$ is the extra time needed for the THz pulse to traverse through the sample thickness $H$, compared to the THz pulse traversing the same thickness in the reference measurement (air, refractive index $n_{ref} = 1$). The time-domain effective refractive index $n_{eff,TD}$ of the sample is thus calculated by
+The time delay $\Delta t$ is the extra time needed for the THz pulse to traverse through the sample thickness $H$, compared to the THz pulse traversing the same thickness in the reference measurement (air, refractive index $n_{\text{ref}} = 1$). The time-domain effective refractive index $n_{\text{eff,TD}}$ of the sample is thus calculated by
 
-$$ n_{eff,TD} = \frac{c \Delta t}{H} + 1 $$
+$$ n_{\text{eff,TD}} = \frac{c \Delta t}{H} + 1 $$
 
 where $c$ is the speed of light with a value of $3 \times 10^8$ ms $^{-1}$. $n_{eff}$ is calculated to four significant figures.
 
@@ -64,11 +64,11 @@ A step-by-step guide to Fourier transform in CaTSper can be found [here](https:/
 
 ### Dynamic Range
 
-In CaTSper's DR Filter app, the user can first specify the cutoff frequency $v_{cutoff}$. The noise floor $E_{ref}(v_{cutoff}$ is defined as the reference signal amplitude at $v_{cutoff}$. The dynamic range $\text{DR}$ can thus be defined as
+In CaTSper's DR Filter app, the user can first specify the cutoff frequency $v_{cutoff}$. The noise floor $E_{\text{ref}}(v_{cutoff}$ is defined as the reference signal amplitude at $v_{cutoff}$. The dynamic range $\text{DR}$ can thus be defined as
 
-$$ \text{DR}(v) = \frac{E_{ref}(v)}{E_{ref}(v_{cutoff})} $$
+$$ \text{DR}(v) = \frac{E_{\text{ref}}(v)}{E_{\text{ref}}(v_{cutoff})} $$
 
-where $E_{ref}(v)$ is the amplitude of the reference signal at frequency $v$.
+where $E_{\text{ref}}(v)$ is the amplitude of the reference signal at frequency $v$.
 
 The upper limit frequency can also be specified in CaTSper's DR Filter app so that data at frequencies that are greater than the upper limit frequency will not be considered for analysis in the next steps.
 
@@ -78,17 +78,17 @@ Transmittance measures the fraction of the terahertz wave that is transmitted th
 
 $$ T(v) = \frac{|E_{sample(v)}|}{|E_{ref(v)}|} $$
 
-where $E_{sample}$ is the frequency domain amplitude of the sample measurement and $E_{ref}$ is the frequency domain amplitude of the reference.
+where $E_{sample}$ is the frequency domain amplitude of the sample measurement and $E_{\text{ref}}$ is the frequency domain amplitude of the reference.
 
 The transmission phase $\theta_T$ is defined as
 
-$$ \theta_T(v) = \theta_{ref}(v) - \theta_{sample}(v) $$
+$$ \theta_T(v) = \theta_{\text{ref}}(v) - \theta_{sample}(v) $$
 
-where $\theta_{sample}$ is the frequency domain phase of the sample measurement $\theta_{ref}$ is the frequency domain phase of the reference measurement.
+where $\theta_{sample}$ is the frequency domain phase of the sample measurement $\theta_{\text{ref}}$ is the frequency domain phase of the reference measurement.
 
 ### Refractive Index
 
-Refractive index is a material property which measures the ratio between the speed of light in vacuum to that in the material. Both the refractive index of the reference $n_{ref}$ and the medium $n_{medium}$ are taken as one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005] for subsequent analysis. The frequency-domain effective refractive index $n_{eff,FD}$ of the sample can thus be calculated as
+Refractive index is a material property which measures the ratio between the speed of light in vacuum to that in the material. Both the refractive index of the reference $n_{\text{ref}}$ and the medium $n_{medium}$ are taken as one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005] for subsequent analysis. The frequency-domain effective refractive index $n_{eff,FD}$ of the sample can thus be calculated as
 
 $$ n_{eff,FD}(v) = \frac{c \theta_T(v)}{2 \pi v \Delta H} + 1 $$
 
@@ -100,9 +100,9 @@ The absorption coefficient $\alpha$ quantifies the extent of loss in terahertz w
 
 The reference factor is first determined using 
 
-$$ \text{Reference factor} = \frac{4 n_{medium} n_{ref}}{\left( n_{medium} + n_{ref} \right)^{2}} $$
+$$ \text{Reference factor} = \frac{4 n_{medium} n_{\text{ref}}}{\left( n_{medium} + n_{\text{ref}} \right)^{2}} $$
 
-As discussed earlier, both $n_{medium}$ and $n_{ref}$ take a value of one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
+As discussed earlier, both $n_{medium}$ and $n_{\text{ref}}$ take a value of one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
 The sample factor is similarly defined as 
 
