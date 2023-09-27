@@ -9,11 +9,11 @@ The time delay $\Delta t$ is the extra time needed for the THz pulse to traverse
 
 $$ n_{\text{eff,TD}} = \frac{c \Delta t}{H} + 1 $$
 
-where $c$ is the speed of light with a value of $3 \times 10^8$ ms $^{-1}$. $n_{eff}$ is calculated to four significant figures.
+where $c$ is the speed of light with a value of $3 \times 10^8$ ms $^{-1}$. $n_{\text{eff}}$ is calculated to four significant figures.
 
-The time delay due to one internal reflection occurring $\Delta t_{1etl}$ is also considered. For one internal reflection, the THz pulse additionally travels through two times the sample thickness, compared to the original $\Delta t$. $\Delta t_{1etl}$ is thus calculated by
+The time delay due to one internal reflection occurring $\Delta t_{1\text{etl}}$ is also considered. For one internal reflection, the THz pulse additionally travels through two times the sample thickness, compared to the original $\Delta t$. $\Delta t_{1\text{etl}}$ is thus calculated by
 
-$$ \Delta t_{1etl} = \Delta t + \frac{2H n_{eff}}{c}$$
+$$ \Delta t_{1\text{etl}} = \Delta t + \frac{2H n_{\text{eff}}}{c}$$
 
 A step-by-step guide to CaTSper's time-domain analysis in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#time-domain-td-tab).  
 
@@ -23,7 +23,7 @@ The following and the user-selected processing options in CaTSper apply to both 
 
 ### Windowing
 
-The time range in which relevant data needs to be Fourier transformed shall be specified. This can be done manually, or via the auto window function. The auto window has a time range of $(-\Delta t_{1etl} + \Delta t, \Delta t_{1etl})$. This makes sure the reference and sample signal are equally spaced from the auto window's axis of symmetry. In addition, the reference and sample signal are respectively spaced from the start and end of the auto window function at a time equivalent to the additional time taken for one internal reflection.
+The time range in which relevant data needs to be Fourier transformed shall be specified. This can be done manually, or via the auto window function. The auto window has a time range of $(-\Delta t_{1\text{etl}} + \Delta t, \Delta t_{1\text{etl}})$. This makes sure the reference and sample signal are equally spaced from the auto window's axis of symmetry. In addition, the reference and sample signal are respectively spaced from the start and end of the auto window function at a time equivalent to the additional time taken for one internal reflection.
 
 The selected data does not have a time range that extends over $(- \infty, \infty)$, and may not have an integer number of periods (i.e. the start and end value of the data are different over the specified time range). This may lead to discontinuities in the subsequent Fourier transform results. To mitigate this situation, the selected data should be multiplied with apodisation functions, which gradually tends to zero at both ends. The following lists the available apodisation functions in CaTSper:
 
@@ -45,11 +45,11 @@ The augmented data is then respectively discrete Fourier transformed into freque
 
 The frequency domain data will be trimmed according to the user-specified frequency range, which should be set based on considerations such as the instrument's signal-to-noise ratio, the range that gives relevant features, etc. Values beyond the upper limit, which is the cutoff frequency, can be trimmed right after Fourier transform, but those below the lower limit are only trimmed after [phase unwrapping](catsper_function_ref.md#amplitude-and-phase), as otherwise erroneous values may result.
 
-The spectral resolution $v_{res}$ of the frequency-domain data is defined by 
+The spectral resolution $\nu_{\text{res}}$ of the frequency-domain data is defined by 
 
-$$ v_{res} = \frac{1}{t_{res} N} $$
+$$ \nu_{\text{res}} = \frac{1}{t_{\text{res}} N} $$
 
-where $t_{res}$ is the time resolution of the measured signal in time domain.
+where $t_{\text{res}}$ is the time resolution of the measured signal in time domain.
 
 ### Amplitude and Phase
 
@@ -64,11 +64,11 @@ A step-by-step guide to Fourier transform in CaTSper can be found [here](https:/
 
 ### Dynamic Range
 
-In CaTSper's DR Filter app, the user can first specify the cutoff frequency $v_{cutoff}$. The noise floor $E_{\text{ref}}(v_{cutoff}$ is defined as the reference signal amplitude at $v_{cutoff}$. The dynamic range $\text{DR}$ can thus be defined as
+In CaTSper's DR Filter app, the user can first specify the cutoff frequency $\nu_{\text{cutoff}}$. The noise floor $E_{\text{ref}}(\nu_{\text{cutoff}}$ is defined as the reference signal amplitude at $\nu_{\text{cutoff}}$. The dynamic range $\text{DR}$ can thus be defined as
 
-$$ \text{DR}(v) = \frac{E_{\text{ref}}(v)}{E_{\text{ref}}(v_{cutoff})} $$
+$$ \text{DR}(\nu) = \frac{E_{\text{ref}}(\nu)}{E_{\text{ref}}(\nu_{\text{cutoff}})} $$
 
-where $E_{\text{ref}}(v)$ is the amplitude of the reference signal at frequency $v$.
+where $E_{\text{ref}}(\nu)$ is the amplitude of the reference signal at frequency $\nu$.
 
 The upper limit frequency can also be specified in CaTSper's DR Filter app so that data at frequencies that are greater than the upper limit frequency will not be considered for analysis in the next steps.
 
@@ -76,21 +76,21 @@ The upper limit frequency can also be specified in CaTSper's DR Filter app so th
 
 Transmittance measures the fraction of the terahertz wave that is transmitted through the sample to the detector. The transmission amplitude $T$ is defined as
 
-$$ T(v) = \frac{|E_{sample(v)}|}{|E_{ref(v)}|} $$
+$$ T(\nu) = \frac{|E_{\text{sample}(\nu)}|}{|E_{ref(\nu)}|} $$
 
-where $E_{sample}$ is the frequency domain amplitude of the sample measurement and $E_{\text{ref}}$ is the frequency domain amplitude of the reference.
+where $E_{\text{sample}}$ is the frequency domain amplitude of the sample measurement and $E_{\text{ref}}$ is the frequency domain amplitude of the reference.
 
 The transmission phase $\theta_T$ is defined as
 
-$$ \theta_T(v) = \theta_{\text{ref}}(v) - \theta_{sample}(v) $$
+$$ \theta_T(\nu) = \theta_{\text{ref}}(\nu) - \theta_{\text{sample}}(\nu) $$
 
-where $\theta_{sample}$ is the frequency domain phase of the sample measurement $\theta_{\text{ref}}$ is the frequency domain phase of the reference measurement.
+where $\theta_{\text{sample}}$ is the frequency domain phase of the sample measurement $\theta_{\text{ref}}$ is the frequency domain phase of the reference measurement.
 
 ### Refractive Index
 
-Refractive index is a material property which measures the ratio between the speed of light in vacuum to that in the material. Both the refractive index of the reference $n_{\text{ref}}$ and the medium $n_{medium}$ are taken as one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005] for subsequent analysis. The frequency-domain effective refractive index $n_{eff,FD}$ of the sample can thus be calculated as
+Refractive index is a material property which measures the ratio between the speed of light in vacuum to that in the material. Both the refractive index of the reference $n_{\text{ref}}$ and the medium $n_{\text{medium}}$ are taken as one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005] for subsequent analysis. The frequency-domain effective refractive index $n_{\text{eff,FD}}$ of the sample can thus be calculated as
 
-$$ n_{eff,FD}(v) = \frac{c \theta_T(v)}{2 \pi v \Delta H} + 1 $$
+$$ n_{\text{eff,FD}}(\nu) = \frac{c \theta_T(\nu)}{2 \pi v \Delta H} + 1 $$
 
 where $\Delta H$ is the thickness difference between the sample and the reference.
 
@@ -100,21 +100,21 @@ The absorption coefficient $\alpha$ quantifies the extent of loss in terahertz w
 
 The reference factor is first determined using 
 
-$$ \text{Reference factor} = \frac{4 n_{medium} n_{\text{ref}}}{\left( n_{medium} + n_{\text{ref}} \right)^{2}} $$
+$$ \text{Reference factor} = \frac{4 n_{\text{medium}} n_{\text{ref}}}{\left( n_{\text{medium}} + n_{\text{ref}} \right)^{2}} $$
 
-As discussed earlier, both $n_{medium}$ and $n_{\text{ref}}$ take a value of one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
+As discussed earlier, both $n_{\text{medium}}$ and $n_{\text{ref}}$ take a value of one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
 The sample factor is similarly defined as 
 
-$$ \text{Sample factor}(v) = \frac{4 n_{medium} n_{eff,FD}(v)}{\left( n_{medium} + n_{eff,FD}(v) \right)^{2}} $$
+$$ \text{\text{sample} factor}(\nu) = \frac{4 n_{\text{medium}} n_{\text{eff,FD}}(\nu)}{\left( n_{\text{medium}} + n_{\text{eff,FD}}(\nu) \right)^{2}} $$
 
 $\alpha$ is then calculated by
 
-$$ \alpha (v) = -\frac{2}{\Delta H} \ln \left(T(v) \frac{\text{Reference factor}}{\text{Sample factor} (v)}  \right) $$
+$$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}}{\text{\text{sample} factor} (\nu)}  \right) $$
 
-In CaTSper's DR Filter app, the dynamic range of $\alpha (v)$ can be checked by the maximum absorption coefficient $\alpha_{max} (v)$, which can be calculated by
+In CaTSper's DR Filter app, the dynamic range of $\alpha (\nu)$ can be checked by the maximum absorption coefficient $\alpha_{max} (\nu)$, which can be calculated by
 
-$$ \alpha_{max} (v) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}}{\text{Sample factor}(v)}  \right) $$
+$$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}}{\text{\text{sample} factor}(\nu)}  \right) $$
 
 which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
@@ -122,16 +122,16 @@ which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.13
 
 Similar to $\alpha$, the extinction coefficient $k$ is defined as the extent that terahertz wave can penetrate through the material. A higher value indicates a lower degree of penetration. $k$ is calculated using the Beer-Lambert Law
 
-$$ k(v) = \frac{\alpha(v) c}{4 \pi v} $$
+$$ k(\nu) = \frac{\alpha(\nu) c}{4 \pi v} $$
 
 ### Dielectric Constant
 
 Permittivity measures the tendency of a material to be polarised by an electric field. The dielectric constant $\kappa$ is defined as the ratio between the permittivity of the material to that of vacuum, which takes a value of one. 
 The real and imaginary part of  $\kappa$ is calculated separately by
 
-$$ \text{Re}(\kappa(v)) = n_{eff,FD}(v)^2 - k(v)^2 $$
+$$ \text{Re}(\kappa(\nu)) = n_{\text{eff,FD}}(\nu)^2 - k(\nu)^2 $$
 
-$$ \text{Im}(\kappa(v)) = 2 n_{eff,FD}(v) k(v) $$
+$$ \text{Im}(\kappa(\nu)) = 2 n_{\text{eff,FD}}(\nu) k(\nu) $$
 
 A step-by-step guide to CaTSper's frequency domain analysis can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
