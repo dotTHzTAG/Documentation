@@ -100,7 +100,7 @@ The absorption coefficient $\alpha$ quantifies the extent of loss in terahertz w
 
 The reference factor is first determined using 
 
-$$ \text{Reference factor} = \frac{4 n_{\text{medium}} n_{\text{ref}}}{\left( n_{\text{medium}} + n_{\text{ref}} \right)^{2}} $$
+$$ \text{Reference factor}(\nu) = \frac{4 n_{\text{medium}} n_{\text{ref}}}{\left( n_{\text{medium}} + n_{\text{ref}} \right)^{2}} $$
 
 As discussed earlier, both $n_{\text{medium}}$ and $n_{\text{ref}}$ take a value of one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
@@ -110,28 +110,28 @@ $$ \text{Sample factor}(\nu) = \frac{4 n_{\text{medium}} n_{\text{eff,FD}}(\nu)}
 
 $\alpha$ is then calculated by
 
-$$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}}{\text{Sample factor} (\nu)}  \right) $$
+$$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}(\nu)}{\text{Sample factor} (\nu)}  \right) $$
 
 In CaTSper's DR Filter app, the dynamic range of $\alpha (\nu)$ can be checked by the maximum absorption coefficient $\alpha_{max} (\nu)$, which can be calculated by
 
-$$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}}{\text{Sample factor}(\nu)}  \right) $$
+$$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}(\nu)}{\text{Sample factor}(\nu)}  \right) $$
 
 which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
 
 ### Extinction Coefficient
 
-Similar to $\alpha$, the extinction coefficient $k$ is defined as the extent that terahertz wave can penetrate through the material. A higher value indicates a lower degree of penetration. $k$ is calculated using the Beer-Lambert Law
+Similar to $\alpha$, the extinction coefficient $\kappa$ is defined as the extent that terahertz wave can penetrate through the material. A higher value indicates a lower degree of penetration. $\kappa$ is calculated using the Beer-Lambert Law
 
-$$ k(\nu) = \frac{\alpha(\nu) c}{4 \pi v} $$
+$$ \kappa(\nu) = \frac{\alpha(\nu) c}{4 \pi v} $$
 
 ### Dielectric Constant
 
-Permittivity measures the tendency of a material to be polarised by an electric field. The dielectric constant $\kappa$ is defined as the ratio between the permittivity of the material to that of vacuum, which takes a value of one. 
-The real and imaginary part of  $\kappa$ is calculated separately by
+Permittivity measures the tendency of a material to be polarised by an electric field. The dielectric constant $\varepsilon$ is defined as the ratio between the permittivity of the material to that of vacuum, which takes a value of one. 
+The real and imaginary part of  $\varepsilon$ is calculated separately by
 
-$$ \text{Re}(\kappa(\nu)) = n_{\text{eff,FD}}(\nu)^2 - k(\nu)^2 $$
+$$ \text{Re}(\varepsilon(\nu)) = n_{\text{eff,FD}}(\nu)^2 - \kappa(\nu)^2 $$
 
-$$ \text{Im}(\kappa(\nu)) = 2 n_{\text{eff,FD}}(\nu) k(\nu) $$
+$$ \text{Im}(\varepsilon(\nu)) = 2 n_{\text{eff,FD}}(\nu) \kappa(\nu) $$
 
 A step-by-step guide to CaTSper's frequency domain analysis can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
