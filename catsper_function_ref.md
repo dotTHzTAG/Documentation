@@ -3,7 +3,7 @@
 This document aims to provide a detailed description to the scientific basis of the processing steps involved in [CaTSper](https://github.com/dotTHzTAG/CaTSper). A step-by-step guide to using CaTSper is available [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md).
 <!-- A detailed in-line annotation of CaTSper's code is available here. -->
 
-## Time Domain Analysis
+## Time-Domain Analysis
 
 The time delay $\Delta t$ is the extra time needed for the THz pulse to traverse through the sample thickness $H$, compared to the THz pulse traversing the same thickness in the reference measurement (air, refractive index $n_{\text{ref}} = 1$). The time-domain effective refractive index $n_{\text{eff,TD}}$ of the sample is thus calculated by
 
@@ -60,7 +60,7 @@ A straight line is then fitted to unwrapped phase against frequency from 0.05 to
 
 A step-by-step guide to Fourier transform in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
-## Frequency Domain Analysis
+## Frequency-Domain Analysis
 
 ### Dynamic Range
 
@@ -80,17 +80,17 @@ $$ T(\nu) = \frac{|E_{\text{sample}(\nu)}|}{|E_{\text{ref}(\nu)}|} $$
 
 where $E_{\text{sample}}$ is the frequency domain amplitude of the sample measurement and $E_{\text{ref}}$ is the frequency domain amplitude of the reference.
 
-The transmission phase $\theta_T$ is defined as
+The transmission phase $\phi_T$ is defined as
 
-$$ \theta_T(\nu) = \theta_{\text{ref}}(\nu) - \theta_{\text{sample}}(\nu) $$
+$$ \phi_T(\nu) = \phi_{\text{ref}}(\nu) - \phi_{\text{sample}}(\nu) $$
 
-where $\theta_{\text{sample}}$ is the frequency domain phase of the sample measurement $\theta_{\text{ref}}$ is the frequency domain phase of the reference measurement.
+where $\phi_{\text{sample}}$ is the frequency domain phase of the sample measurement $\phi_{\text{ref}}$ is the frequency domain phase of the reference measurement.
 
 ### Refractive Index
 
 Refractive index is a material property which measures the ratio between the speed of light in vacuum to that in the material. Both the refractive index of the reference $n_{\text{ref}}$ and the medium $n_{\text{medium}}$ are taken as one to match the methods in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005] for subsequent analysis. The frequency-domain effective refractive index $n_{\text{eff,FD}}$ of the sample can thus be calculated as
 
-$$ n_{\text{eff,FD}}(\nu) = \frac{c \theta_T(\nu)}{2 \pi v \Delta H} + 1 $$
+$$ n_{\text{eff,FD}}(\nu) = \frac{c \phi_T(\nu)}{2 \pi v \Delta H} + 1 $$
 
 where $\Delta H$ is the thickness difference between the sample and the reference.
 
