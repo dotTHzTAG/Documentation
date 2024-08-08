@@ -229,30 +229,32 @@ The user has prepared the data set and can proceed to the next step for data ext
 The bottom half of the 'Data Manipulation (DM)' tab is for CaTSper to extract values at, or find the peak above, a certain frequency.
 
 #### Frequency Base Tab
-<b>Stage 5</b>: Under the 'Frequency Base' tab, the user can extract values at chosen terahertz frequency specified in the 'Get Data from Frequency(THz)' box. The 'DISPLAY X LINES' button will add a dashed red line to this specified frequency.
+<b>Stage 5</b>: Under the 'Frequency Base' tab, the user can extract values at a chosen terahertz frequency specified in the 'Get Data from Frequency(THz)' box. The 'Display X Lines' button will add a dashed red line to this specified frequency in the upper 'PLOT 1' area. Multiple frequencies can be specified for plotting on the same graph by entering the desired frequencies into the 'Get Data from Frequency(THz)' field with values separated by a space.
 
-<b>Stage 6</b>: 'REARRANGE DATA' button gets the values on the y-axis from 'PLOT 1' at the specified frequency and display the 'Measurement' name (if pre-defined) and 'X-axis data'.
+<b>Stage 6</b>: The 'Re-arrange Data' button finds the values on the y-axis from 'PLOT 1' at the specified frequency, as well as choosing a plot title and x-labels in the 'Measurement' and 'X-axis Data' fields respectively. The title can be updated by editing the text in the 'Measurement' field then re-plotting the graph.
 
-<b>Stage 7</b>: 'PLOT' button will plot the 'Y-axis data' against 'X-axis data' on the area to the right-hand-side. The user can define the 'X-Label' (default value 'Temperature (K)') and 'Y-Label' by changing the corresponding boxes.
+<b>Stage 7</b>: The 'Plot' button plots the y-axis data against data set on the 'PLOT 2' area to the right-hand side. The user can define the 'X-Label' and 'Y-Label' (i.e. axis titles) by changing the corresponding text fields.
 
 
 #### Peak Base Tab
-Under the 'Peak Base' tab, the user can ask CaTSper to find the peak on the frequency domain spectrum and plot the y-axis values where the peak is found against the data set number. The user can find the <b>algorithm</b> CaTSper uses to find peaks <a href='https://github.com/dotTHzTAG/Documentation/blob/main/catsper_function_ref.md#finding-peaks'><b>here</b></a>.
+Under the 'Peak Base' tab, the user can ask CaTSper to find the peaks in the frequency domain spectrum and plot the y-axis values where the peak is found against data set number. The user can find the algorithm CaTSper uses to find peaks <a href='https://github.com/dotTHzTAG/Documentation/blob/main/catsper_function_ref.md#finding-peaks'><b>here</b></a>.
 
-The user needs to define the minimum peak prominence (default value '0'), lower frequency limit (default value '1 THz') and the number of peaks (default value '1'). Then, by clicking the 'REARRANGE DATA' button, CaTSper will locate the peaks above the chosen frequency limit.
+The user needs to define the minimum peak prominence (default value '0', in the same units as the y-axis of the upper plot), lower frequency limit (default value '1 THz') and the peak number to plot, numbered left to right for each data set (default value '1'). Then, by clicking the 'Re-arrange Data' button, CaTSper will locate the peaks above the chosen frequency limit.
 
-'PLOT' button will plot the 'Y-axis data' where the peak is found against the individual data set on the area to the right-hand-side. The user can define the 'X-Label' (default value 'Temperature (K)') and 'Y-Label' by changing the corresponding boxes.
+The 'Plot' button will plot the y-value of peak <i>x</i>, where <i>x</i> is the 'Peak Num.' chosen earlier, against the individual data set on the area to the right-hand side. The user can define the 'X-Label' and 'Y-Label' (i.e. axis titles) by changing the corresponding boxes.
 
 
 ### Summary of All Button Functionalities Under the 'Data Manipulation' Tab
-'IMPORT ALL DATA': add all data sets from the 'Available Data Set' box to the 'Source Data Set' box <br>
-'PLOT (individual data sets)': plot each data set as a separate curve <br>
-'PLOT (mean and range)': evaluate the mean of each y-axis value at its corresponding x-axis value and plot the average value curve as well as the region (shaded in red) where all data sets reside <br>
-'CALCULATE': arrange the chosen x-axis and y-axis variable to the respective axes <br>
-'DISPLAY X LINES': add a dashed red line to this specified frequency <br>
-'REARRANGE DATA' (frequency base): get the values on the y-axis from 'PLOT 1' at the specified frequency and display the 'Measurement' name (if pre-defined) and 'X-axis data' <br>
-'REARRANGE DATA' (peak base): locate the peaks above the chosen frequency limit <br>
-'PLOT': reveal the plot for the frequency base or peak base analysis <br>
-'PLOT (in a new figure)': reveal the plot on a new figure window <br>
-'SAVE DM DATA': save all data processed in DM to a .mat file <br>
-'ASSIGN FD DATA IN WORKSPACE': assign all data processed in DM to the workspace as 'DM_data' <br>
+'Import All Data': add all data sets from the 'Available Data Set' box to the 'Source Data Set' box <br>
+'Import All Data (Inverse Sequence)': add all data sets from the 'Available Data Set' box to the 'Source Data Set' box in reverse order <br>
+'Calculate': evaluate the chosen y-axis data <br>
+'Plot (individual data sets)': plot each data set as a separate curve <br>
+'Plot (mean and range)': evaluate the mean of each y-axis value at its corresponding x-axis value and plot the average value curve as well as the region (shaded in red) where all data sets reside <br>
+'3D Plot (Frequency x-axis)': [insert description]
+'Display X Lines': add a dashed red line to the upper plot at the specified frequency <br>
+'Re-arrange Data' (frequency base): get the y-axis values from 'PLOT 1' at the specified frequency, and display a plot title in the 'Measurement' field and the x-labels in the 'X-axis data' field <br>
+'Re-arrange Data' (peak base): locate and label the peaks above the chosen frequency limit <br>
+'Plot': reveal the plot for the frequency base or peak base analysis <br>
+'Jet Colormap': change the colour scheme for the plots to jet colourmap <br>
+'Save DM_DATA': save all data processed in DM to a '.mat' file <br>
+'Assign FD_DATA in Workspace': assign all data processed in DM to the MATLAB workspace as 'DM_data' <br>
