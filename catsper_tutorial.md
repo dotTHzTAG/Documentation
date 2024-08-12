@@ -151,7 +151,7 @@ Once the user is satisfied with the FD data analysis, clicking the 'Data Manipul
 Once the FD data have been selected and appeared in the 'FD Selection' list box, the user can click the 'Save FD_DATA' to save all list items in the 'FD List' and 'FD Selection' list boxes into a '.mat' file.
 
 ### Load the list of FD Data
-This only works when running CaTSper in MATLAB. Click the 'Load FD_DATA' and choose the '.mat' file created by the 'Save FD_DATA' functionality. The FD data saved in this file will then be imported to the 'FD List' and 'FD Selection' list boxes.
+Click the 'Load FD_DATA' and choose the '.mat' file created by the 'Save FD_DATA' functionality. The FD data saved in this file will then be imported to the 'FD List' and 'FD Selection' list boxes.
 
 ### Summary of All Button Functionalities Under the 'Frequency Domain (FD)' Tab
 'ALL': add all data sets from the 'FD List' list box to the 'FD Selection' list box <br>
