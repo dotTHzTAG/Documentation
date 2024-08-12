@@ -41,9 +41,14 @@ If the user wants to keep the data, simply press the 'Export .thz File' button t
 ## Converting Another Dataset
 Press the 'Clear Memory' button in the first instance and confirm this action in the message shown. Then follow the procedure in the 'Loading the Raw Dataset' section above to load another raw data file into the converter.
 
-## Editing Thickness and Temperature Information
+## Editing the 'Instrument Profile' and 'User Profile' rows
+The instrument used and user operating said instrument can be stored alongside the measurements in the 'Instrument Profile' and 'User Profile' rows, which are edited in the 'Instruments and Users' tab.
+[insert screenshot of 'Instruments and Users' tab]
+For both the 'Instrument' and 'User' sections, the user can click 'Add Profile' to insert a new column, then double-click on each cell in the new profile to customise it. Once the relevant profile exists, click on any cell in the column an the 'Selection' box below should update. Insert the column numbers for which the profile should be assigned, then click 'Link' to update this in the 'Measurements and Metadata' tab. Instead of clicking 'Link', the user can click 'Anonymous Instrument Profile, 0' or 'Anonymous User Profile, 0' to assign blank, anonymous profiles.
+
+## Editing the metadata
 ![catsperMATconverter edit data](/images/THz_converter/Thickness_Edit.png)
-The terahertz instrument might not record, for example, the thickness of the sample (mm), sample weight (mg), and temperature (K) at which the measurements were undertaken. The converter allows user to input these data by editing the relevant fields in the table (rows #10, #11, and #12). Double-click the cell to edit the information.
+The terahertz instrument might not record, for example, the thickness of the sample (mm), sample weight (mg) and temperature (K) at which the measurements were undertaken. The converter allows user to input any additional information that may be relevant to the measurements. Any cell in the 'Metadata Description' row (row #9) can be edited by double-clicking the cell and inputting a list of metadata labels separated by commas e.g. 'Mass RBV (mg), Mass PE (mg), Thickness (mm), Reference thickness (mm)'. These labels will be assigned to the rows below, and up to seven different metadata types can be inputted (rows #10-16). The numerical data in the bulk of the table can be edited by double-clicking on the relevant cell.
 
 ## Loading the Converted Dataset (.thz File)
 The 'Import .thz File' button enables the user to load an already converted file into the converter, for example, add extra data by following the procedure outlined in the 'Editing Thickness and Temperature Information' section above.
