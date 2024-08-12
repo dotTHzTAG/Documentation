@@ -43,7 +43,9 @@ Press the 'Clear Memory' button in the first instance and confirm this action in
 
 ## Editing the 'Instrument Profile' and 'User Profile' rows
 The instrument used and user operating said instrument can be stored alongside the measurements in the 'Instrument Profile' and 'User Profile' rows, which are edited in the 'Instruments and Users' tab.
+
 [insert screenshot of 'Instruments and Users' tab]
+
 For both the 'Instrument' and 'User' sections, the user can click 'Add Profile' to insert a new column, then double-click on each cell in the new profile to customise it. Once the relevant profile exists, click on any cell in the column an the 'Selection' box below should update. Insert the column numbers for which the profile should be assigned, then click 'Link' to update this in the 'Measurements and Metadata' tab. Instead of clicking 'Link', the user can click 'Anonymous Instrument Profile, 0' or 'Anonymous User Profile, 0' to assign blank, anonymous profiles.
 
 ## Editing the metadata
