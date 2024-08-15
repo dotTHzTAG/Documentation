@@ -27,22 +27,22 @@ The time range in which relevant data needs to be Fourier transformed shall be s
 
 The selected data does not have a time range that extends over $(- \infty, \infty)$, and may not have an integer number of periods (i.e. the start and end value of the data are different over the specified time range). This may lead to discontinuities in the subsequent Fourier transform results. To mitigate this situation, the selected data should be multiplied with apodisation functions, which gradually tends to zero at both ends. The following lists the available apodisation functions in CaTSper:
  
-- Barthann
+- [Barthann](https://uk.mathworks.com/help/signal/ref/barthannwin.html)
 - [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html): Summation of three cosine terms. The function is created with a length greater than the data length by one, and then the last value is removed from the function. It is suitable for applications where minimal leakage is required.
-- Blackman Harris
-- Bohnman
-- Cheb
-- Flattop
-- Gaussian
+- [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html)
+- [Bohnman](https://uk.mathworks.com/help/signal/ref/bohmanwin.html)
+- [Chebyshev](https://uk.mathworks.com/help/signal/ref/chebwin.html)
+- [Flattop](https://uk.mathworks.com/help/signal/ref/flattopwin.html)
+- [Gaussian](https://uk.mathworks.com/help/signal/ref/gausswin.html)
 - [Hann](https://uk.mathworks.com/help/signal/ref/hann.html): Raised cosine. The two end values are at zero. The function length is one greater than the data length. It is suitable for random signals and is good against spectral leakage.
 - [Hamming](https://uk.mathworks.com/help/signal/ref/hamming.html): Raised cosine. The two end values are not at zero. The function length is one greater than the data length. After Fourier transform, the side lobes has a value lower than that of Hann, making Hamming suitable for optimising signal quality. 
-- Kaiser
-- Nuttall
-- Parzen
-- Rectangular: Similar to heaviside step function. The values of the selected data are not changed and hence the function is suitable for transient data. % not in new version
+- [Kaiser](https://uk.mathworks.com/help/signal/ref/kaiser.html)
+- [Nuttall](https://uk.mathworks.com/help/signal/ref/nuttallwin.html)
+- [Parzen](https://uk.mathworks.com/help/signal/ref/parzenwin.html)
+- [Rectangular](https://uk.mathworks.com/help/signal/ref/rectwin.html): Similar to heaviside step function. The values of the selected data are not changed and hence the function is suitable for transient data. % not in new version
 - [Taylor](https://uk.mathworks.com/help/signal/ref/taylorwin.html): The MATLAB default settings are used. The coefficients in the function are not normalised. After Fourier transform, it gives a narrow main lobe with side lobe values that decrease monotonically. It is suitable for radar applications.
 - [Triangular](https://uk.mathworks.com/help/signal/ref/triang.html): Symmetrical triangular function. If the length of the data has an odd value, the two end values are zero and the triangular peak is at one. If the length is instead even, the two end values are equal to the reciprocal of the length and a plateau, instead of a triangular peak, is resulted. The function length is the same as the data length.
-- Turkey
+- [Tukey](https://uk.mathworks.com/help/signal/ref/tukeywin.html)
 
 ### Fast Fourier Transform
 
