@@ -27,9 +27,9 @@ The time range in which relevant data needs to be Fourier transformed shall be s
 
 The selected data does not have a time range that extends over $(- \infty, \infty)$, and may not have an integer number of periods (i.e. the start and end value of the data are different over the specified time range). This may lead to discontinuities in the subsequent Fourier transform results. To mitigate this situation, the selected data should be multiplied with apodisation functions, which gradually tends to zero at both ends. The following lists the available apodisation functions in CaTSper:
  
-- [Barthann](https://uk.mathworks.com/help/signal/ref/barthannwin.html)
-- [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html): Summation of three cosine terms. The function is created with a length greater than the data length by one, and then the last value is removed from the function. It is suitable for applications where minimal leakage is required.
-- [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html)
+- [Barthann](https://uk.mathworks.com/help/signal/ref/barthannwin.html): Linear combination of weighted [Bartlett](https://uk.mathworks.com/help/signal/ref/bartlett.html) and [Hann](https://uk.mathworks.com/help/signal/ref/hann.html) window. The function is triangular with cosine edges to reduce discontinuity in signals. It is suitable in cases where a balance of spectral leakage control and frequency resolution is required.
+- [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html): Summation of two cosine terms. The function is created with a length greater than the data length by one, and then the last value is removed from the function. It is suitable for applications where minimal leakage is required.
+- [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html): Summation of three cosine terms. Compared to [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html), [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html) can further reduce side lobe levels in frequency domain. It is suitable in cases where minimising spectral leakage is important.
 - [Bohnman](https://uk.mathworks.com/help/signal/ref/bohmanwin.html)
 - [Chebyshev](https://uk.mathworks.com/help/signal/ref/chebwin.html)
 - [Flattop](https://uk.mathworks.com/help/signal/ref/flattopwin.html)
