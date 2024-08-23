@@ -73,7 +73,7 @@ A step-by-step guide to Fourier transform in CaTSper can be found [here](https:/
 
 ### Dynamic Range
 
-In CaTSper's DR Filter app, the user can first specify the cutoff frequency $\nu_{\text{cutoff}}$. The noise floor $E_{\text{ref}}(\nu_{\text{cutoff}}$ is defined as the reference signal amplitude at $\nu_{\text{cutoff}}$. The dynamic range $\text{DR}$ can thus be defined as
+In CaTSper's DR Filter app, the user can first specify the cutoff frequency $\nu_{\text{cutoff}}$, beyond which the signals are mostly noise. The noise floor $E_{\text{ref}}(\nu_{\text{cutoff}}$ is defined as the reference signal amplitude at $\nu_{\text{cutoff}}$. The dynamic range $\text{DR}$ can thus be defined as
 
 $$ \text{DR}(\nu) = \frac{E_{\text{ref}}(\nu)}{E_{\text{ref}}(\nu_{\text{cutoff}})} $$
 
@@ -121,11 +121,11 @@ $\alpha$ is then calculated by
 
 $$ \alpha (\nu) = -\frac{2}{\Delta H} \ln \left(T(\nu) \frac{\text{Reference factor}(\nu)}{\text{Sample factor} (\nu)}  \right) $$
 
-In CaTSper's DR Filter app, the dynamic range of $\alpha (\nu)$ can be checked by the maximum absorption coefficient $\alpha_{max} (\nu)$, which can be calculated by
+In CaTSper's DR Filter app, the user-specified noise floor defines the [dynamic range](#dynamic-range). The  [dynamic range](#dynamic-range) is then used to calculate the maximum absorption coefficient at each frequency, $\alpha_{max} (\nu)$, by
 
 $$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Reference factor}(\nu)}{\text{Sample factor}(\nu)}  \right) $$
 
-which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005].
+which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005]. $\alpha_{max} (\nu)$ specifies the maximum threshold of $\alpha$ which is valid for analysis at each $\nu$. For $\alpha (\nu) > \alpha_{max} (\nu)$, the $\alpha (\nu)$ at the relevant $\nu$ are convoluted with noise and are therefore unreliable for analysis. Users can check their $\alpha (\nu)$ against $\alpha_{max} (\nu)$ in CaTSper's DR Filter app.
 
 ### Extinction Coefficient
 
