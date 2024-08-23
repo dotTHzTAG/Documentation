@@ -77,7 +77,7 @@ In CaTSper's DR Filter app, the user can first specify the cutoff frequency $\nu
 
 $$ \text{DR}(\nu) = \frac{E_{\text{ref}}(\nu)}{E_{\text{ref}}(\nu_{\text{cutoff}})} $$
 
-where $E_{\text{ref}}(\nu)$ is the amplitude of the reference signal at frequency $\nu$.
+where $E_{\text{ref}}(\nu)$ is the amplitude of the reference signal at frequency $\nu$. Details on the application of dynamic range are described in the later section of [absorption coefficient](#absorption-coefficient).
 
 The upper limit frequency can also be specified in CaTSper's DR Filter app so that data at frequencies that are greater than the upper limit frequency will not be considered for analysis in the next steps.
 
