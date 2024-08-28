@@ -147,9 +147,9 @@ A step-by-step guide to CaTSper's frequency domain analysis can be found [here](
 
 ## Data Management
 
-### Finding Peaks
+### Peak Base
 
-The MATLAB built-in function ['findpeaks'](https://uk.mathworks.com/help/signal/ref/findpeaks.html) is used to identify peaks for a set of selected data (e.g. absorption coefficient $\alpha$) against another (e.g. frequency). A peak is defined such that it has a value greater than its adjacent neighbours or has a value of infinity. A minimum peak [prominence](https://uk.mathworks.com/help/signal/ug/prominence.html) can be specified such that only peaks with prominence greater than that will be recorded.
+The MATLAB built-in function ['findpeaks'](https://uk.mathworks.com/help/signal/ref/findpeaks.html) is used to identify peaks for a set of selected data (e.g. absorption coefficient $\alpha$) against another (e.g. frequency). A peak is defined such that it has a value greater than its adjacent neighbours or has a value of infinity. A minimum peak [prominence](https://uk.mathworks.com/help/signal/ug/prominence.html) can be specified such that only peaks with prominence greater than that will be recorded. In addition, a lower limit can be specified so that only peaks at a frequency beyond the specified lower limit are considered. Moreoever, the peak value and frequency corresponding to the peak number specified can be extracted for all respective data sets and plotted. For example, if '3' is specified as the peak number, the third peak according to the ascending order of frequency and that satisfies the other specified conditions will be extracted for all respective data sets.
 
 A step-by-step guide to data management in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#data-manipulation-dm-tab).
 
