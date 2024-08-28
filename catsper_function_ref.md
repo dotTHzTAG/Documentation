@@ -25,24 +25,24 @@ The following and the user-selected processing options in CaTSper apply to both 
 
 The time range in which relevant data needs to be Fourier transformed shall be specified. This can be done manually, or via the auto window function. The auto window has a time range of $(-\Delta t_{1\text{etl}} + \Delta t, \Delta t_{1\text{etl}})$. This makes sure the reference and sample signal are equally spaced from the auto window's axis of symmetry. In addition, the reference and sample signal are respectively spaced from the start and end of the auto window function at a time equivalent to the additional time taken for one internal reflection.
 
-The selected data does not have a time range that extends over $(- \infty, \infty)$, and may not have an integer number of periods (i.e. the start and end value of the data are different over the specified time range). This may lead to discontinuities in the subsequent Fourier transform results. To mitigate this situation, the selected data should be multiplied with apodisation functions, which gradually tends to zero at both ends. The common apodisation functions used in terahertz spectroscopy analysis include [rectangular](https://uk.mathworks.com/help/signal/ref/rectwin.html), [Hann](https://uk.mathworks.com/help/signal/ref/hann.html) and [Hamming](https://uk.mathworks.com/help/signal/ref/hamming.html). The following lists the available apodisation functions in CaTSper:
+The selected data does not have a time range that extends over $(- \infty, \infty)$, and may not have an integer number of periods (i.e. the start and end value of the data are different over the specified time range). This may lead to discontinuities in the subsequent Fourier transform results. To mitigate this situation, the selected data should be multiplied with window functions, which gradually tends to zero at both ends. The common window functions used in terahertz spectroscopy analysis include [rectangular](https://uk.mathworks.com/help/signal/ref/rectwin.html), [Hann](https://uk.mathworks.com/help/signal/ref/hann.html) and [Hamming](https://uk.mathworks.com/help/signal/ref/hamming.html). The following lists the available window functions in CaTSper:
  
-- [Barthann](https://uk.mathworks.com/help/signal/ref/barthannwin.html): Linear combination of weighted [Bartlett](https://uk.mathworks.com/help/signal/ref/bartlett.html) and [Hann](https://uk.mathworks.com/help/signal/ref/hann.html) apodisation functions. The function is triangular with cosine edges to reduce discontinuity in signals. It is suitable in cases where a balance of spectral leakage control and frequency resolution is required.
+- [Barthann](https://uk.mathworks.com/help/signal/ref/barthannwin.html): Linear combination of weighted [Bartlett](https://uk.mathworks.com/help/signal/ref/bartlett.html) and [Hann](https://uk.mathworks.com/help/signal/ref/hann.html) window functions. The function is triangular with cosine edges to reduce discontinuity in signals. It is suitable in cases where a balance of spectral leakage control and frequency resolution is required.
 - [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html): Summation of two cosine terms. The function is created with a length greater than the data length by one, and then the last value is removed from the function. It is suitable for applications where minimal leakage is required.
 - [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html): Summation of three cosine terms. Compared to [Blackman](https://uk.mathworks.com/help/signal/ref/blackman.html), [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html) can further reduce side lobe levels in frequency domain. It is suitable in cases where minimising spectral leakage is important.
 - [Bohnman](https://uk.mathworks.com/help/signal/ref/bohmanwin.html): Summation of a sine term, and a product consisting a linear triangular function and cosine term. It offers smooth tapering but a steeper transition to zeros at the edges.
 - [Chebyshev](https://uk.mathworks.com/help/signal/ref/chebwin.html): Product of the Chebyshev polynomial and a cosine term, which is used to control oscillations in frequency response. It reduces side lobe levels to minimise spectral leakage.
-- [Flattop](https://uk.mathworks.com/help/signal/ref/flattopwin.html): Summation of a series of cosines. Before returning to zero at the edges, parts of the apodisation function are negative to minimise scalloping loss. It preserves the amplitude of sinusoidal components, but the broad bandwidth leads to a noiser bandwith and lower frequency resolution.
-- [Gaussian](https://uk.mathworks.com/help/signal/ref/gausswin.html): Gaussian function. As the Gaussian function spans $\[-\infty,\infty\]$, the Gaussian apodisation function does not end at zero at the edges. It is a general-purpose apodisation function used for smoothing signals whilst preserving key spectral features.
-- [Hann](https://uk.mathworks.com/help/signal/ref/hann.html): Raised cosine. The two end values are at zero. The function length is one greater than the data length. It is suitable for random signals and is good against spectral leakage. This is one of the common apodisation functions used in terahertz spectroscopy analysis.
-- [Hamming](https://uk.mathworks.com/help/signal/ref/hamming.html): Raised cosine. The two end values are not at zero. The function length is one greater than the data length. After Fourier transform, the side lobes has a value lower than that of Hann, making Hamming suitable for optimising signal quality. This is one of the common apodisation functions used in terahertz spectroscopy analysis.
+- [Flattop](https://uk.mathworks.com/help/signal/ref/flattopwin.html): Summation of a series of cosines. Before returning to zero at the edges, parts of the window function are negative to minimise scalloping loss. It preserves the amplitude of sinusoidal components, but the broad bandwidth leads to a noiser bandwith and lower frequency resolution.
+- [Gaussian](https://uk.mathworks.com/help/signal/ref/gausswin.html): Gaussian function. As the Gaussian function spans $\[-\infty,\infty\]$, the Gaussian window function does not end at zero at the edges. It is a general-purpose window function used for smoothing signals whilst preserving key spectral features.
+- [Hann](https://uk.mathworks.com/help/signal/ref/hann.html): Raised cosine. The two end values are at zero. The function length is one greater than the data length. It is suitable for random signals and is good against spectral leakage. This is one of the common window functions used in terahertz spectroscopy analysis.
+- [Hamming](https://uk.mathworks.com/help/signal/ref/hamming.html): Raised cosine. The two end values are not at zero. The function length is one greater than the data length. After Fourier transform, the side lobes has a value lower than that of Hann, making Hamming suitable for optimising signal quality. This is one of the common window functions used in terahertz spectroscopy analysis.
 - [Kaiser](https://uk.mathworks.com/help/signal/ref/kaiser.html): Ratio of 2 zeroth order modified Bessel function. It emphasises the main lobe, so it is most suitable for applications associated with finite impulse response. 
 - [Nuttall](https://uk.mathworks.com/help/signal/ref/nuttallwin.html): Summation of three cosine terms. Nuttall only differs from [Blackman Harris](https://uk.mathworks.com/help/signal/ref/blackmanharris.html) by the coefficient values and hence slightly lower sidelobes. It minimises spectral leakage and so it is suitable for cases where distinguishing closely adjacent frequency components are important.
-- [Parzen](https://uk.mathworks.com/help/signal/ref/parzenwin.html): Piecewise cubic functions approximated from the Gaussian apodisation function. It offers good smoothing and minimises spectral leakage, but has a lower frequency resolution due to a relatively wider main lobe.
-- [Rectangular](https://uk.mathworks.com/help/signal/ref/rectwin.html): Similar to heaviside step function. All points within the apodisation function take a value of 1 and those outside take a value of 0. The values of the selected data are thus unchanged and hence the function is suitable for transient data.  This is one of the common apodisation functions used in terahertz spectroscopy analysis.
+- [Parzen](https://uk.mathworks.com/help/signal/ref/parzenwin.html): Piecewise cubic functions approximated from the Gaussian window function. It offers good smoothing and minimises spectral leakage, but has a lower frequency resolution due to a relatively wider main lobe.
+- [Rectangular](https://uk.mathworks.com/help/signal/ref/rectwin.html): Similar to heaviside step function. All points within the window function take a value of 1 and those outside take a value of 0. The values of the selected data are thus unchanged and hence the function is suitable for transient data.  This is one of the common window functions used in terahertz spectroscopy analysis.
 - [Taylor](https://uk.mathworks.com/help/signal/ref/taylorwin.html): The MATLAB default settings are used. The coefficients in the function are not normalised. After Fourier transform, it gives a narrow main lobe with side lobe values that decrease monotonically. It is suitable for radar applications.
 - [Triangular](https://uk.mathworks.com/help/signal/ref/triang.html): Symmetrical triangular function. If the length of the data has an odd value, the two end values are zero and the triangular peak is at one. If the length is instead even, the two end values are equal to the reciprocal of the length and a plateau, instead of a triangular peak, is resulted. The function length is the same as the data length.
-- [Tukey](https://uk.mathworks.com/help/signal/ref/tukeywin.html): Tapered cosine function. Half of the apodisation function centred around the mid-point is defined as 1, and both sides descends via a cosine function to zero at the edges of the apodisation function. It is useful for data tapering where the original signal needs to be preserved but edge effects need to be reduced.
+- [Tukey](https://uk.mathworks.com/help/signal/ref/tukeywin.html): Tapered cosine function. Half of the window function centred around the mid-point is defined as 1, and both sides descends via a cosine function to zero at the edges of the window function. It is useful for data tapering where the original signal needs to be preserved but edge effects need to be reduced.
 
 ### Fast Fourier Transform
 
@@ -63,9 +63,9 @@ where $t_{\text{res}}$ is the time resolution of the measured signal in time dom
 ### Amplitude and Phase
 
 Amplitude data are the scaled data obtained after fast Fourier transform. Phase data is obtained by unwrapping the frequency domain data. The built-in MATLAB ['unwrap'](https://uk.mathworks.com/help/matlab/ref/unwrap.html) function is adopted as it eliminates discontinuities between consecutive phases by adding multiples of $\pm 2 \pi$ until the difference is less than $\pi$.
-Due to the high signal-to-noise ratio at 0.8 THz, it is set as the starting point for unwrapping phase to reduce errors. This is instrument specific and one can change the value accordingly by accessing the 'TDSunwrap' function in the [Catsper.m](https://github.com/CamTHz/catsper/blob/main/Catsper.m) code.
-Frequency domain data, that corresponds to frequencies greater than 0.8 THz, will be unwrapped in increasing values starting at 0.8 THz, and vice versa for data corresponding to frequencies less than 0.8 THz.
-A straight line is then fitted to unwrapped phase against frequency from 0.05 to 0.4 THz. The intercept of the straight line at 0 THz gives the phase offset. The phase offset is then applied to all phase data for correction.
+In order to reduce errors, the start frequency for phase unwrapping should be chosen where there is a high signal-to-noise ratio.
+Frequency domain data, that corresponds to frequencies greater than the start frequency, will be unwrapped in increasing values starting at the start frequency, and vice versa for data corresponding to frequencies less than the start frequency.
+A straight line is then fitted to the unwrapped phase against frequency over the specified extrapolation range. The intercept of the straight line at 0 THz gives the phase offset. The phase offset is then applied to all phase data for correction.
 
 A step-by-step guide to Fourier transform in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
@@ -127,11 +127,12 @@ $$ \alpha_{max} (\nu) = \frac{2}{H} \ln \left(\text{DR} \times \frac{\text{Refer
 
 which references the method in [Jepsen and Fischer (2005)](https://doi.org/10.1364/OL.30.000029)[^Jepsen&Fischer2005]. $\alpha_{max} (\nu)$ specifies the maximum threshold of $\alpha$ which is valid for analysis at each $\nu$. For $\alpha (\nu) > \alpha_{max} (\nu)$, the $\alpha (\nu)$ at the relevant $\nu$ are convoluted with noise and are therefore unreliable for analysis. Users can check their $\alpha (\nu)$ against $\alpha_{max} (\nu)$ in CaTSper's DR Filter app.
 
-### Extinction Coefficient
+<!-- ### Extinction Coefficient
 
 Similar to $\alpha$, the extinction coefficient $\kappa$ is defined as the extent that terahertz wave can penetrate through the material. A higher value indicates a lower degree of penetration. $\kappa$ is calculated using the Beer-Lambert Law
 
 $$ \kappa(\nu) = \frac{\alpha(\nu) c}{4 \pi v} $$
+-->
 
 ### Dielectric Constant
 
@@ -144,13 +145,13 @@ $$ \text{Im}(\varepsilon(\nu)) = 2 n_{\text{eff,FD}}(\nu) \kappa(\nu) $$
 
 A step-by-step guide to CaTSper's frequency domain analysis can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#frequency-domain-fd-tab).
 
-## Data Manipulation
+## Data Management
 
 ### Finding Peaks
 
 The MATLAB built-in function ['findpeaks'](https://uk.mathworks.com/help/signal/ref/findpeaks.html) is used to identify peaks for a set of selected data (e.g. absorption coefficient $\alpha$) against another (e.g. frequency). A peak is defined such that it has a value greater than its adjacent neighbours or has a value of infinity. A minimum peak [prominence](https://uk.mathworks.com/help/signal/ug/prominence.html) can be specified such that only peaks with prominence greater than that will be recorded.
 
-A step-by-step guide to data manipulation in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#data-manipulation-dm-tab).
+A step-by-step guide to data management in CaTSper can be found [here](https://github.com/dotTHzTAG/Documentation/blob/main/catsper_tutorial.md#data-manipulation-dm-tab).
 
 ## Bibliography
 [^Jepsen&Fischer2005]: Jepsen, P.U. and Fischer, B.M., 2005. Dynamic range in terahertz time-domain transmission and reflection spectroscopy. _Optics letters, 30_(1), pp.29-31.
